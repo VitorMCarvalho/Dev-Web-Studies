@@ -25,7 +25,7 @@ console.log(Object.keys(pessoa))
 const dest = { a:1}
 const ob1 = {b:2}
 const ob2 = {c:3, a:7}
-const final = Object.assign(dest, ob1,ob2)
+const final = Object.assign(dest, ob1,ob2) //copiar
 console.log(final)
 Object.freeze(final)
 final.a =7777
