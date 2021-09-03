@@ -3,9 +3,8 @@ pretende-se adicionar a funcionalidade de calcular a média de um conjunto de n�
 usuário.
 Com o intuito de realizar esse cálculo, crie uma função que receba um array com uma quantidade
 indeterminada de números e retorne a média simples desses números.*/
-const reduzir = (acumulador, atual) => {return acumulador + atual}
 const media = array =>{
-    const saída = array.reduce(reduzir)
+    const saída = array.reduce((acumulador, atual) => {return acumulador + atual})
     return console.log(saída/array.length)
 }
 

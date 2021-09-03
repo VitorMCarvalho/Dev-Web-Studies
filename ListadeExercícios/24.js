@@ -3,7 +3,7 @@ vezes que o caractere se repete na string. A função deverá ser case-sensitive
 maiúsculas de minúsculas.*/
 
 const repete = (caractere,string) =>{
-    const vetor = string.split('')
+    const vetor = string.split('') // equivalente a [...string]
     let resultado = 0
     for(let i = 0; i<vetor.length; i++){
         if(vetor[i] === caractere)
@@ -14,3 +14,10 @@ const repete = (caractere,string) =>{
 
 repete("r", "A sorte favorece os audazes") // retornará 2
 repete("c", "Conhece-te a ti mesmo") // retornará 1
+
+
+//usando filter e operador "..." -- nao pensei nisso
+
+function contarCaractere(caractereBuscado, frase) {
+    return [...frase].filter(caractere => caractere === caractereBuscado).length
+    }

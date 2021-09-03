@@ -11,8 +11,21 @@ soma([10, 10, 10]) // retornará 30
 soma([15, 15, 15, 15]) // retornará 60
 
 
-//OU
+//Usando Reduce -- Achei melhor esse
 
-const sum = (acumulador,atual) =>{return acumulador+atual}
-console.log([10, 10, 10].reduce(sum)) // retornará 30
-console.log([15, 15, 15, 15].reduce(sum)) // retornará 60
+const sum = array =>{
+    let soma = array.reduce((acumulador,atual) =>{return acumulador+atual})
+    return console.log(soma)
+}
+sum([10, 10, 10]) // retornará 30
+sum([15, 15, 15, 15]) // retornará 60
+
+//Usando forEach --também é válido
+
+const somafor = array =>{
+    let soma = 0
+    array.forEach(element => soma += element)
+    return console.log(soma)
+}
+somafor([10, 10, 10]) // retornará 30
+somafor([15, 15, 15, 15]) // retornará 60

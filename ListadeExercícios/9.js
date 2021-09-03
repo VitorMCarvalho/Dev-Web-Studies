@@ -9,3 +9,11 @@ const repete = (param1,param2) =>{
 } 
 repete("código", 2)
 repete(7,3)
+
+//resolução alternativa -- Resposta da lista
+function repetir(param1, param2) {
+    return console.log(Array(param2).fill(param1))
+    }
+
+repetir("código", 2)
+repetir(7,3)

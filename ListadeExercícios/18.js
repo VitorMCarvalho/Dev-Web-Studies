@@ -20,3 +20,19 @@ func([
     {nome: "Galaxy S20", categoria: "Eletrônicos", preco: 3599.99},
     {nome: "Macbook Pro", categoria: "Eletrônicos", preco: 30999.90}
     ]) // retornará 34599.89
+
+
+//METODO ALTERNATIVO COM REDUCE --melhor método
+
+const somaai = array =>{
+    const soma = array.reduce((acumulador,atual)=> acumulador.preco + atual.preco)
+    return console.log(soma)
+}
+somaai([
+    {nome: "Jornal online", categoria: "Informação", preco: 89.99},
+    {nome: "Cinema", categoria: "Entretenimento", preco: 150}
+    ]) // retornará 239.99)
+somaai([
+    {nome: "Galaxy S20", categoria: "Eletrônicos", preco: 3599.99},
+    {nome: "Macbook Pro", categoria: "Eletrônicos", preco: 30999.90}
+    ]) // retornará 34599.89

@@ -20,3 +20,12 @@ const filtro = (palavra,string) =>{
 
 filtro("pro", ["programação", "mobile", "profissional"]) // retornará ["programação", "profissional"]
 filtro("python", ["javascript", "java", "c++"]) // retornará []
+
+
+//MELHOR METODO -- retirado da lista
+const melhor = (palavra,string) =>{
+    string.filter(elemento => elemento.includes(palavra))
+}
+
+melhor("pro", ["programação", "mobile", "profissional"]) // retornará ["programação", "profissional"]
+melhor("python", ["javascript", "java", "c++"]) // retornará []

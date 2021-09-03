@@ -10,3 +10,12 @@ const mais = num =>{
 
 mais(2)
 mais(4)
+
+//resolução alternativa -- Resposta da lista
+
+function simboloMais(quantidade) {
+    return console.log(Array(quantidade).fill('+').join(''))
+    }
+
+simboloMais(2)
+simboloMais(4)

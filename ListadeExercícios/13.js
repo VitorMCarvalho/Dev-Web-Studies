@@ -12,3 +12,14 @@ const retornaNum = array =>{
 retornaNum(['aaaa', 1 ,'7', 2, 5])
 retornaNum(["Javascript", 1, "3", "Web", 20]) // retornará [1, 20]
 retornaNum(["a", "c"]) // retornará []
+
+
+//Melhor solução
+
+const filtro = array =>{
+    return console.log(array.filter(a => typeof a === "number"))
+}
+
+filtro(['aaaa', 1 ,'7', 2, 5])
+filtro(["Javascript", 1, "3", "Web", 20]) // retornará [1, 20]
+filtro(["a", "c"]) // retornará []

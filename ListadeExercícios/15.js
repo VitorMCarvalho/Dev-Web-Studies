@@ -11,3 +11,14 @@ const pares = array =>{
 }
 pares([1, 2, 3, 4]) // retornará []
 pares([10, 70, 22, 43]) // retornará [10, 22]
+
+
+//Melhor resolução usando Filter
+
+const par = array =>{
+    return console.log(array.filter((numero,indice)=>{
+        return numero%2 === 0 && indice%2 ===0
+    }))
+}
+par([1, 2, 3, 4]) // retornará []
+par([10, 70, 22, 43]) // retornará [10, 22]
