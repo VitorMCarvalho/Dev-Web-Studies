@@ -16,7 +16,7 @@ const retorna = array =>{
     let funcionarios = array.filter(x=> x.genero === 'F' && x.pais === 'China')
     let id = funcionarios[0].id
     let mulher = funcionarios.reduce((antes,atual)=>{
-        if(antes.salario <atual.salario){
+        if(antes.salario >atual.salario){
             antes.salario = atual.salario
             //console.log(antes.salario)
         }
