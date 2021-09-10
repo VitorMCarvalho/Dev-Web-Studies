@@ -1,4 +1,4 @@
-//node faz cacho dos modulos
+//node faz cache dos modulos
 module.exports ={
     valor:1,
     inc(){

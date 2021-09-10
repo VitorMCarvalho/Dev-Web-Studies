@@ -1,4 +1,4 @@
-//uma factoru retorna um novo objeto
+//uma factory retorna um novo objeto
 module.exports = () =>{
     return{
         valor:1,

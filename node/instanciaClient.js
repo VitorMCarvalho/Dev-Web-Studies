@@ -6,7 +6,7 @@ const contadorD = require("./instanciaNova")()
 
 contadorA.inc()
 contadorB.inc()
-console.log(contadorB.valor, contadorA.valor) //cache do valor, logo doi incrementado 2 vezes
+console.log(contadorB.valor, contadorA.valor) //cache do valor, logo foi incrementado 2 vezes
 
 contadorC.inc()
 contadorC.inc()
