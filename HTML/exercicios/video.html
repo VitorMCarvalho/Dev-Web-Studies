@@ -1,0 +1,60 @@
+<video id="video" width="800" height="450" controls controlsList='nodownload'>
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser nao suporta a tag do video
+</video>
+
+<div wm-progresso='video' class='progress'>
+    <div></div>
+</div>
+
+<div>
+    <button onclick="playVid()" wm-play="video">Play </button>
+    <button onclick="pauseVid()" wm-pause="video">Pause</button>
+</div>
+<script>
+    const doc = document.getElementById('video')
+    //console.log(doc.currentTime)
+    doc.oncontextmenu = () => false //remove a possibilidade de baixar o video pelo botao direito
+    doc.onloadedmetadata = function() {
+        pinta(this.duration, this.currentTime, ()=>{
+        console.log("finalizou")
+    })
+    }
+    function playVid() {
+        doc.play();
+    }
+    function pauseVid() {
+        doc.pause();
+    }
+    function pinta(total, inicial, callback){
+        inicial = doc.currentTime
+        const percent = (inicial/total)*100
+        const barra = document.querySelector('[wm-progresso] > div')
+        //console.log(barra.style)
+        if(percent <= 100){
+            barra.style.width = percent + '%'
+            barra.innerHTML = (percent).toFixed(1) + '%'
+            setTimeout(() => pinta(total, inicial, callback),)
+        } if(percent == 100){
+            callback()
+        }
+    }
+    
+</script>
+<style>
+    .progress{
+        height: 20px;
+        width: 750px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progress > div {
+        background-color: red;
+        color: white;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>

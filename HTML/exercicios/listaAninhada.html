@@ -1,0 +1,52 @@
+<!--Tópico de Lista Aninhada e Desafio de Criar uma lista "interativa" com Click, onde quando clicado
+o "app", o "config" e o "public" as sub listas são recolhidas ou mostradas-->
+
+<h1>Projeto</h1>
+<ul class = 'tree'>
+    <li>
+        <span id>backend</span>
+        <ul>
+            <li>
+                <span id>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span id>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rota.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+        </li>
+    </li>
+    <li><span id>frontend</span>
+        <ul>
+            <li>
+                <span id> public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[id]').forEach(item =>{
+        item.addEventListener('click', function(){
+            let subItens = this.nextElementSibling
+            //console.log(subItens)
+            let change = subItens.style.display
+            subItens.style.display = change === 'none'? 'block': 'none'
+        })
+    })
+</script>

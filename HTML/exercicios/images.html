@@ -1,0 +1,100 @@
+<div wm-slicer>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+            alt="Muro da Cidade"
+            width="513" height="342"
+            title="Arrecifes - Tarso Bessa">
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+            alt="Intro Cod3r" height="342">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+            alt="pão de açucar" height="342">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+            alt="Avatar" height="50" align="left">
+        Textogs dfg sfdg sdfg sdfg fdg dfg dfg dfgdfgdfgdf
+        fg sdfgdfg dfg sdfg dfghfgh fghfgh fg hfgh fgh fghfgh
+        g hfdfghfghdfghrtlsgfnjdklghusk dfgkldfgujk odfg osd
+        dfgh osoidfjogijslkfigoldfkljgiodfjigofíodjfg sdfsdfdsfg
+    </p>
+    
+    <p class="cidade"></p>
+    
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+                media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>
+</div>
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+
+    .circular{
+        width: 480px;
+        background-color: #fff;
+    }
+    .texto{
+        width: 400px;
+    }
+    .texto img{
+        margin-right: 10px;
+    }
+
+    .cidade{
+        width: 480px;
+        height: 360px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+<script>
+    function troca(img, comeco, fim, indice, callback){
+        const newComeco = comeco - indice
+        if(newComeco >= fim){
+            img.style.left = newComeco + 'px'
+            setTimeout(() => troca(img, newComeco, fim, indice, callback), 7)
+        } else{
+            callback()
+        }
+    }
+    /*const paragrafo = document.querySelector('[wm-slicer] > p') // seleciona o primeiro paragrafo
+    paragrafo.style.display = 'block'
+    troca(paragrafo, 1500, -520, 5, ()=>{
+        console.log('terminou')
+    })*/
+    function oSlide(){
+        const imagens = document.querySelectorAll('[wm-slicer] > p')
+        const slide = Array.from(imagens)
+        mostra(slide, slide[0])
+    }
+
+    function mostra(lista, Elemento){
+        Elemento.style.display = 'block'
+        const inicio = innerWidth
+        const fim = -Elemento.clientWidth
+
+        Elemento.style.left = `${inicio}px`
+        troca(Elemento, inicio,fim,5, ()=>{
+            mostra(lista, proximo(lista, Elemento))
+        })
+    }
+    const proximo = (lista, atual) =>{
+        const i = lista.indexOf(atual)+1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+    oSlide()
+</script>

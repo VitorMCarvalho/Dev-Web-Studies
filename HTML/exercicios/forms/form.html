@@ -1,0 +1,64 @@
+<H1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Formulário</H1>
+
+<form method="POST">
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio"cols="30" rows="10"></textarea>
+    
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3"> Alterar</button>
+    
+    <!-- bolinhas de marcação-->
+    <div>
+        <input type="radio" name="tipo" value="Admin"> Admin
+        <input type="radio" name="tipo" value="Regular"> Regular
+        <input type="radio" name="tipo" value="Aluno"> Aluno
+    </div>
+
+    <!-- caixa de checagem-->
+    <div>
+        <input type="checkbox" name="ativo" > Ativo
+    </div>
+    
+    <select name="estado"> <!-- caixinha de seleção-->
+        <option value="">Selecione</option>
+        <option value="ac">Acre</option>
+        <option value="pe">Pernambuco</option>
+        <option value="sp">São Paulo</option>
+    </select>
+
+    <select id='sel' name="interesses" multiple size ='5'>
+        <option value="JS">JS</option>
+        <option value="C++">C++</option>
+        <option value="Python">Python</option>
+        <option value="PHP">PHP</option>
+        <option value="Java">Java</option>
+    </select>
+
+</form>
+
+<style>
+    input, textarea, select{
+        display: block;
+        margin-bottom: 10px;
+        border: outset red;
+    }
+    input[type=radio],
+    input[type=checkbox]{
+        display: inline;
+        }
+    button{
+        color: red;
+        border: outset red;
+    }
+    button:hover{
+        color: red;
+        background-color: blanchedalmond;
+        border: outset red;
+    }
+    select[id=sel] option:hover{
+        color: red;
+        background-color: blanchedalmond;
+    }
+</style>

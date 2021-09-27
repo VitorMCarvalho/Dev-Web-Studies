@@ -1,0 +1,22 @@
+<script>
+    var index = 0
+    var imagens = []
+    imagens[0] = "http://files.cod3r.com.br/curso-web/imagem1.jpg"
+    imagens[1] = "http://files.cod3r.com.br/curso-web/imagem2.gif"
+    imagens[2] = "http://files.cod3r.com.br/curso-web/imagem3.png"
+    imagens[3] = "http://files.cod3r.com.br/curso-web/avatar.jpg"
+    imagens[4] = "http://files.cod3r.com.br/curso-web/logo-larga.png"
+    function troca(){
+        const tempo = 2000
+        document.slideshow.src = imagens[index]
+        if(index < imagens.length -1){
+            index++
+        } else{
+            index = 0
+        }
+        setTimeout("troca()", tempo)
+    }
+    window.onload = troca
+</script>
+
+<img name="slideshow" width="420" height="360">
