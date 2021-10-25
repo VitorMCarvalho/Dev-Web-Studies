@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body {
+            font-size: 40px;
+            background-color: coral;
+            height: 100%;
+            margin: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+        span, div{
+            width: 50%;
+            height: 250px;
+            height: 50%; /* so vai mudar se alterar o tamanho do Html e do Body*/
+            display: inline-block;
+        }
+        h2{
+            width: 100%;
+            background-color: red;
+            height: 50%;
+            display: block;
+            margin: 0;
+        }
+        .letter::first-letter{
+            font-weight: bold;
+            font-size: 200%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letter">Título</div><span class="letter">Subtítulo</span><h2 class='letter'>Conteúdo</h2>
+</body>
+
+</html>

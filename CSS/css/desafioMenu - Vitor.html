@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        header{
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            background-color: rgb(49, 40, 40);
+            height: 120px;
+            vertical-align: middle;
+            border-bottom:5px groove rgb(122, 159, 226);
+        }
+        .logo{
+            width: 53px;
+            padding-top: 8px;
+            padding-left: 10px;
+        }
+        .menu{
+            position: absolute;
+            top: 20px;
+            left: 500px;
+        }
+        .menu ul li{
+            display: inline-block;
+            padding: 20px;
+            margin-left: 40px;
+            font-weight: bold;
+        }
+        .autenticacao{
+            font-family: 'Oswald', sans-serif;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+        .destaque{
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 100px;
+            background-color: red;
+            font-weight: bold;
+            box-shadow: 2px 2px 1px 1px #555;
+        }
+        .destaque:active, .menu li:active{
+            box-shadow: none;
+        }
+        .destaque:hover, .menu li:hover{
+            background-color: rgb(122, 159, 226);
+        }
+        .menu-toggle{
+            position:absolute;
+            right: 10px;
+            top: 40px;
+            display: none;
+            width: 50px;
+            height: 40px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        @media (max-width: 1200px) {
+            .autenticacao{
+                display: none;
+            }
+        }
+        @media(max-width: 1060px ){
+            ul{
+                display: none;
+            }
+        }
+        @media(max-width:1060px) and (min-width:630px){
+            .menu-toggle{
+                display: block;
+            }
+        }
+        body{
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a> |
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+    </header>
+
+    <script>
+        function locationHashChanged() {
+            doc = document.getElementsByTagName('a')
+            docLista = document.getElementsByTagName('li')
+                for(let x = 1; x<doc.length-2; x++){
+                    if(doc[x].href == location.href){
+                        docLista[x-1].style = "background-color: rgb(122, 159, 226);"
+                    }
+                    if(doc[x].href != location.href){
+                        docLista[x-1].style = "background-color: rgb(49, 40, 40);"
+                    }
+                }
+                //location.style.backgroundColor = ' rgb(122, 159, 226)'
+            }
+        
+        window.onhashchange = locationHashChanged;
+
+    </script>
+</body>
+
+</html>
