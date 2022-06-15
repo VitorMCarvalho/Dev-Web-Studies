@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]') //ou #compras
+        console.log('Elemento "ul".....................')
+        console.log('childNodes:', lista.childNodes)
+        console.log('destino', lista.destino) // undefined, cause the destino isn't a default property
+        console.log('getAttribute', lista.getAttribute('destino')) //assim retorna o valor de destino = escritorio
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttribute('destino', 'empresa') //modifica
+        lista.setAttribute('status', 'open') //e adiciona atributos
+        lista.removeAttribute('destino')
+        console.log(lista.dataset.urgencia)
+        lista.dataset.urgencia = 4
+        console.log(lista.getAttribute('data-urgencia')) //dataset determinado pelo prefixo data
+
+        //take care
+        const label = document.querySelector('label')
+        console.log(label.for) //erro, for é palavra reservada
+        console.log(label.htmlFor) //assim funciona
+        console.log(label.getAttribute('for')) //assim tbm
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p>
+    </div>
+    <script>
+        const body = document.querySelector('body')
+        const div = document.querySelector('div')
+        div.innerHTML = 'New Texto' //substitui o que está dentro da div por
+        //div.outerHTML = 'fudeu' //substitui a propria div por esse texto
+
+        //adicionar elementos em torno da tag
+        div.insertAdjacentHTML("beforebegin", '<p>COLOCADO ANTES DO INICIO</p>')
+        div.insertAdjacentHTML("afterbegin", "<p>COLOCADO DEPOIS DO INICIO</p>")
+
+        div.insertAdjacentHTML("beforeend", '<p>COLOCADO ANTES DO FIM</p>')
+        div.insertAdjacentHTML("afterend", "<div><p>COLOCADO DEPOIS DO FIM</p></div>")
+
+        console.log(body.innerText) //retorna todo o texto associado a tag
+    </script>
+</body>
+
+</html>

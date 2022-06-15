@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul><li>Pedro</li><li>Ana</li><li>Bia</li></ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function log(){
+            console.log(this) //função para printar
+        }
+        HTMLAllCollection.prototype.log = log //associando a função aos prototipos
+        HTMLElement.prototype.log = log//--
+        NodeList.prototype.log = log//--
+        Node.prototype.log = log//--
+        Array.prototype.log= log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() //printa o pai
+        lista.childNodes.log() //printa os filhos
+
+        const primeiro = lista.firstChild //primeiro
+        primeiro.log()
+        primeiro.nextSibling.log() //proximo
+
+        const ultimo = lista.lastChild //ultimo
+        ultimo.log()
+        ultimo.previousSibling.log() //anterior
+
+        Array.from(lista.children).log() //todos os filhos
+        lista.firstElementChild.log() //retorna o primeiro elemento, excluindo os textos entre eles
+        lista.lastElementChild.log() // '' ultimo ''
+
+        lista.parentNode.previousElementSibling.log()
+        lista.parentNode.nextElementSibling.log()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!--onclick="esperar5s(event)--> <!--metodo intuitivo, mas lento-->
+        <a attrib href="https://google.com.br" ">Google</a>
+    </div>
+    <script>
+        function esperar5s(e){
+            e.preventDefault()
+            console.log('esperar 5s')
+            setTimeout(()=>{
+                const link = e.target //e.target é o que "disparou o evento", no caso, o clique do link
+                window.location.href = link.href
+            },5000)
+        }
+        /*const a = document.querySelector('a')
+        a.onclick = esperar5s //menos explicito*/
+
+        const atributo_personalizado = document.querySelector("[attrib]")
+        atributo_personalizado.onclick = esperar5s
+    </script>
+</body>
